@@ -195,15 +195,16 @@ const ticketId =
 
     // EMAIL SEND
 
-    await transporter.sendMail({
-      from: "chiranjeevee1095@gmail.com",
-
-      to: email,
-
-      subject: "Ticket Created",
-
-      text: `Your ticket "${title}" has been created successfully.`,
-    });
+    try {
+  await transporter.sendMail({
+    from: process.env.EMAIL_USER,
+    to: email,
+    subject: "Ticket Created",
+    text: `Your ticket "${title}" has been created successfully.`,
+  });
+} catch (mailError) {
+  console.log(mailError);
+}
 
     res.json({
       message: "Ticket Created Successfully",
