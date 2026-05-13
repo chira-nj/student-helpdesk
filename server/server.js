@@ -199,15 +199,15 @@ const ticketId =
 
     // EMAIL SEND
 
-    await transporter.sendMail({
-      from: "chiranjeevee1095@gmail.com",
+    // await transporter.sendMail({
+    //   from: "chiranjeevee1095@gmail.com",
 
-      to: email,
+    //   to: email,
 
-      subject: "Ticket Created",
+    //   subject: "Ticket Created",
 
-      text: `Your ticket "${title}" has been created successfully.`,
-    });
+    //   text: `Your ticket "${title}" has been created successfully.`,
+    // });
 
     res.json({
       message: "Ticket Created Successfully",
