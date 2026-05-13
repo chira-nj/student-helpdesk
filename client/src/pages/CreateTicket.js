@@ -132,7 +132,7 @@ function CreateTicket() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/create-ticket",
+        `${process.env.REACT_APP_API_URL}/create-ticket`,
         {
           method: "POST",
 
