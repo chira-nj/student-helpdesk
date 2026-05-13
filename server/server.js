@@ -202,8 +202,10 @@ const ticketId =
     subject: "Ticket Created",
     text: `Your ticket "${title}" has been created successfully.`,
   });
+
+  console.log("Mail sent");
 } catch (mailError) {
-  console.log(mailError);
+  console.log("Mail Error:", mailError);
 }
 
     res.json({
