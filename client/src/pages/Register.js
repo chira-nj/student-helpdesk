@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
 
@@ -6,14 +7,14 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("student");
-
+  const navigate = useNavigate();
   const handleRegister = async (e) => {
 
     e.preventDefault();
 
     try {
 
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
 
         method: "POST",
 
@@ -32,6 +33,9 @@ function Register() {
       const data = await response.json();
 
       alert(data.message);
+      if (response.ok) {
+  navigate("/");
+}
 
       setName("");
       setEmail("");
