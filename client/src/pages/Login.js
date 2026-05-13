@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -179,16 +181,16 @@ function Login() {
           }}
         >
 
-          <a
-            href="/register"
-            style={{
-              color: "#2563eb",
-              fontWeight: "bold",
-              textDecoration: "none",
-            }}
-          >
-            Register Here
-          </a>
+          <Link
+  to="/register"
+  style={{
+    color: "#2563eb",
+    fontWeight: "bold",
+    textDecoration: "none",
+  }}
+>
+  Register Here
+</Link>
 
         </div>
 
